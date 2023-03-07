@@ -1,0 +1,21 @@
+current directory: /Users/kokuboriki/todo/vendor/bundle/ruby/3.1.0/gems/date-3.3.3/ext/date
+/Users/kokuboriki/.rbenv/versions/3.1.3/bin/ruby -I /Users/kokuboriki/.rbenv/versions/3.1.3/lib/ruby/3.1.0 extconf.rb
+checking for rb_category_warn()... yes
+checking for timezone in time.h with  -Werror... yes
+checking for altzone in time.h with  -Werror... no
+creating Makefile
+
+current directory: /Users/kokuboriki/todo/vendor/bundle/ruby/3.1.0/gems/date-3.3.3/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20230308-29151-fwcqkl sitelibdir\=./.gem.20230308-29151-fwcqkl clean
+
+current directory: /Users/kokuboriki/todo/vendor/bundle/ruby/3.1.0/gems/date-3.3.3/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20230308-29151-fwcqkl sitelibdir\=./.gem.20230308-29151-fwcqkl
+compiling date_core.c
+compiling date_parse.c
+compiling date_strftime.c
+compiling date_strptime.c
+linking shared-object date_core.bundle
+
+current directory: /Users/kokuboriki/todo/vendor/bundle/ruby/3.1.0/gems/date-3.3.3/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20230308-29151-fwcqkl sitelibdir\=./.gem.20230308-29151-fwcqkl install
+/usr/bin/install -c -m 0755 date_core.bundle ./.gem.20230308-29151-fwcqkl
