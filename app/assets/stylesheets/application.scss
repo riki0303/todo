@@ -1,15 +1,48 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import "reset";
+@import "variable";
+@import "header";
+@import "form";
+
+// 共通スタイル
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  // しょーごさんおすすめfont-family
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", sans-serif;
+  font-size: $bacic-font-size;
+  font-weight: normal;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: $bacic-font-size;
+}
+
+h2 {
+  font-size: $title-font-size;
+  font-weight: $title-font-weight;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 25px 25px;
+  width: 100%;
+}
