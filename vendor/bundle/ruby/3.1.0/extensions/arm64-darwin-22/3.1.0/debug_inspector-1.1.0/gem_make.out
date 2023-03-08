@@ -1,0 +1,15 @@
+current directory: /Users/kokuboriki/todo/vendor/bundle/ruby/3.1.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+/Users/kokuboriki/.rbenv/versions/3.1.3/bin/ruby -I /Users/kokuboriki/.rbenv/versions/3.1.3/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/kokuboriki/todo/vendor/bundle/ruby/3.1.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make DESTDIR\= sitearchdir\=./.gem.20230308-40143-dyr94f sitelibdir\=./.gem.20230308-40143-dyr94f clean
+
+current directory: /Users/kokuboriki/todo/vendor/bundle/ruby/3.1.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make DESTDIR\= sitearchdir\=./.gem.20230308-40143-dyr94f sitelibdir\=./.gem.20230308-40143-dyr94f
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/kokuboriki/todo/vendor/bundle/ruby/3.1.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make DESTDIR\= sitearchdir\=./.gem.20230308-40143-dyr94f sitelibdir\=./.gem.20230308-40143-dyr94f install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20230308-40143-dyr94f
