@@ -1,0 +1,42 @@
+.flash {
+  -webkit-animation: fade-in-out;
+  animation: fade-in-out;
+  visibility: hidden;
+  z-index: 1;
+  padding: 16px;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes fade-in-out {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  50% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-out {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  50% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
