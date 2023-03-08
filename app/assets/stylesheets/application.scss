@@ -2,6 +2,8 @@
 @import "variable";
 @import "header";
 @import "form";
+@import "tab";
+@import "flash";
 
 // 共通スタイル
 * {
@@ -35,6 +37,7 @@ img {
 
 a {
   text-decoration: none;
+  color: #000;
 }
 
 li {

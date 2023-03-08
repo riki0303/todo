@@ -9,6 +9,18 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
-    %p.notice= notice
-    %p.alert= alert
+    %header.header
+      %h2.header__title
+        = link_to('Boards', root_path)
+      - if user_signed_in?
+        .dropdown
+          = image_tag 'default-avatar', alt: 'サンプル画像', class:"header__img"
+          .dropdown-content
+            = link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }
+      - else
+        = link_to 'ログイン', new_user_session_path, class: 'header__btn'
+    - if flash.present?
+      .flash
+        - flash.each do |key, value|
+          %div{:class => key}= value
     = yield
