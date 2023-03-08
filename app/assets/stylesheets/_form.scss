@@ -1,0 +1,40 @@
+@import "variable";
+.form {
+  position: relative;
+}
+
+.form__item {
+  margin-top: 33px;
+}
+
+.form__text {
+  width: 100%;
+  max-width: 362px;
+  height: 40px;
+  margin-top: 5px;
+  padding-left: 2%;
+  background: $bacic-textfield-color;
+  border: none;
+  border-radius: 10px;
+}
+
+.form__btn {
+  width: 100%;
+  max-width: 362px;
+  height: 40px;
+  background: $bacic-btn-color;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__btn-text {
+  color: white;
+  background: none;
+  border: none;
+}
