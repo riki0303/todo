@@ -18,8 +18,12 @@
   border-radius: 10px;
 }
 
+.form__text-ara {
+  min-height: 200px;
+}
+
 .form__btn {
-  width: 100%;
+  width: 90%;
   max-width: 362px;
   height: 40px;
   background: $bacic-btn-color;
