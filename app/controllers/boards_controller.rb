@@ -18,7 +18,7 @@ class BoardsController < ApplicationController
       redirect_to board_path(@board), notice: '保存出来ました！'
     else
       flash.now[:error] = '保存に失敗しました！'
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
