@@ -16,10 +16,11 @@
         .dropdown
           = image_tag 'default-avatar', alt: 'サンプル画像', class:"header__img"
           .dropdown-content
-            = link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }
+            = link_to 'logout', destroy_user_session_path, data: { turbo_method: :delete }
       - else
-        = link_to 'ログイン', new_user_session_path, class: 'header__btn'
+        = link_to 'login', new_user_session_path, class: 'header__btn'
     - if flash.present?
+      -# flashはハッシュ
       .flash
         - flash.each do |key, value|
           %div{:class => key}= value

@@ -2,17 +2,18 @@
   %h2 All Boards
   .post
     - @boards.each do |board|
-      .post__item
-        %h3.post__titile
-          = board.name
-        %p.post__text
-          = board.description
-        = image_tag 'avatar-2', alt: 'boardsの投稿者画像', class: 'post__image'
-        .dropdown.post__dropdown
-          %button.three-dot-leader
-            %span.dot
-              .dropdown-content
-                = link_to 'Edit'
-                = link_to 'Delete'
+      = link_to(board_path(id:board.id)) do
+        .post__item
+          %h3.post__titile
+            = board.name
+          %p.post__text
+            = board.description
+          = image_tag 'avatar-2', alt: 'boardsの投稿者画像', class: 'post__image'
+          .dropdown.post__dropdown
+            %button.three-dot-leader
+              %span.dot
+                .dropdown-content
+                  = link_to 'Edit'
+                  = link_to 'Delete'
   .post
     = link_to('+ Add new borad', new_board_path, class: 'post__new-link')

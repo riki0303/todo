@@ -1,0 +1,16 @@
+.container
+  - @board.errors.full_messages.each do |message|
+    %ul
+      %li
+        = message
+  = form_with model: @board, local: true do |f|
+    .field.form__item
+      = f.label :name, 'name'
+      %br
+      = f.text_field :name, class: 'form__text'
+    .field.form__item
+      = f.label :description, 'description'
+      %br
+      = f.text_area :description, class: 'form__text form__text-ara'
+    .form__btn
+      = f.submit 'Submit', class: 'form__btn-text'
