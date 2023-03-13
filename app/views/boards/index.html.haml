@@ -2,7 +2,7 @@
   %h2 All Boards
   .post
     - @boards.each do |board|
-      = link_to(board_path(id:board.id)) do
+      = link_to(board_path(id: board.id)) do
         .post__item
           %h3.post__titile
             = board.name
@@ -13,7 +13,7 @@
             %button.three-dot-leader
               %span.dot
                 .dropdown-content
-                  = link_to 'Edit'
+                  = link_to 'Edit', edit_board_path(id: board.id)
                   = link_to 'Delete'
   .post
     = link_to('+ Add new borad', new_board_path, class: 'post__new-link')

@@ -15,13 +15,13 @@
   right: 0;
   position: absolute;
   background-color: white;
-  min-width: 100px;
+  min-width: 70px;
   z-index: 1;
   border-radius: 10px;
 }
 
 .dropdown-content a {
-  padding: 8px 12px;
+  padding: 4px 2px;
   text-decoration: none;
   display: block;
   border-radius: 10px;
@@ -29,6 +29,7 @@
 
 .dropdown-content a:hover {
   background-color: white;
+  opacity: 0.6;
 }
 
 .dropdown:hover .dropdown-content {
