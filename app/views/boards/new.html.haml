@@ -6,11 +6,11 @@
   -# フォーム
   = form_with model: @board, local: true do |f|
     .field.form__item
-      = f.label :name, 'name'
+      = f.label :name, 'Name',class: 'form__title'
       %br
       = f.text_field :name, class: 'form__text'
     .field.form__item
-      = f.label :description, 'description'
+      = f.label :description, 'Description',class: 'form__title'
       %br
       = f.text_area :description, class: 'form__text form__text-ara'
     .form__btn

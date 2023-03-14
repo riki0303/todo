@@ -26,6 +26,17 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
   end
 
+  def update
+    @board = Board.find(params[:id])
+
+    if @board.update(board_params)
+      redirect_to board_path(@board), notice: '更新出来ました！'
+    else
+      flash.now[:error] = '更新に失敗しました！'
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def board_params
