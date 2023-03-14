@@ -14,6 +14,6 @@
               %span.dot
                 .dropdown-content
                   = link_to 'Edit', edit_board_path(id: board.id)
-                  = link_to 'Delete'
+                  = link_to 'Delete', board_path(id: board.id), data: { turbo_method: "delete", turbo_confirm: '本当に削除しても宜しいですか？' }
   .post
     = link_to('+ Add new borad', new_board_path, class: 'post__new-link')
