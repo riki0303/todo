@@ -1,14 +1,15 @@
 class BoardsController < ApplicationController
+  before_action :set_board, only: %i[show edit update destroy]
+
   def index
     @boards = Board.all
   end
 
-  def show
-    @board = Board.find(params[:id])
-  end
+  def show; end
 
   def new
     # formで使う為のインスタンス指定
+    # newアクションではnewの代わりにbuildを指定する場合が多い（可読性向上のため）
     @board = current_user.boards.build
   end
 
@@ -22,13 +23,9 @@ class BoardsController < ApplicationController
     end
   end
 
-  def edit
-    @board = Board.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @board = Board.find(params[:id])
-
     if @board.update(board_params)
       redirect_to board_path(@board), notice: '更新出来ました！'
     else
@@ -39,14 +36,19 @@ class BoardsController < ApplicationController
 
   def destroy
     board = Board.find(params[:id])
-
     board.destroy!
     redirect_to root_path, notice: '削除出来ました！'
   end
 
+  # create,editでの変更内容を制御
   private
 
   def board_params
     params.require(:board).permit(:name, :description)
+  end
+
+  # before_actionに設定
+  def set_board
+    @board = Board.find(params[:id])
   end
 end
