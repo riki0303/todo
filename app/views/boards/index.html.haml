@@ -2,7 +2,7 @@
   %h2 All Boards
   .post
     - @boards.each do |board|
-      = link_to(board_path(id: board.id)) do
+      = link_to(board_tasks_path(board_id: board.id)) do
         .post__item
           %h3.post__titile
             = board.name
