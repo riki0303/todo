@@ -20,7 +20,6 @@
       - else
         = link_to 'login', new_user_session_path, class: 'header__btn'
     - if flash.present?
-      -# flashはハッシュ
       .flash
         - flash.each do |key, value|
           %div{:class => key}= value

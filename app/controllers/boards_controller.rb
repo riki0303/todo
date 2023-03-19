@@ -16,7 +16,7 @@ class BoardsController < ApplicationController
   def create
     @board = current_user.boards.build(board_params)
     if @board.save
-      redirect_to board_path(@board), notice: '保存出来ました！'
+      redirect_to boards_path, notice: '保存出来ました！'
     else
       flash.now[:error] = '保存に失敗しました！'
       render :new, status: :unprocessable_entity
@@ -26,8 +26,9 @@ class BoardsController < ApplicationController
   def edit; end
 
   def update
+    @board = current_user.boards.find(params[:id])
     if @board.update(board_params)
-      redirect_to board_path(@board), notice: '更新出来ました！'
+      redirect_to boards_path, notice: '更新出来ました！'
     else
       flash.now[:error] = '更新に失敗しました！'
       render :edit, status: :unprocessable_entity
@@ -35,7 +36,7 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    board = Board.find(params[:id])
+    board = current_user.boards.find(params[:id])
     board.destroy!
     redirect_to root_path, notice: '削除出来ました！'
   end
