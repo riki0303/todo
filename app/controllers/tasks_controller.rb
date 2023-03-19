@@ -9,7 +9,7 @@ class TasksController < ApplicationController
   end
 
   def new
-    # user_idをログインユーザーのidとしたインスタンスを生成
+    # user_idをログインユーザーのidとしたtaskインスタンスを生成
     @task = current_user.tasks.build
     # taskの不足しているboard_idを下記で指定
     @board = Board.find(params[:board_id])
@@ -17,9 +17,10 @@ class TasksController < ApplicationController
   end
 
   def create
+    # user_idをログインユーザーのidとしたtaskインスタンスを生成
     @task = current_user.tasks.build(task_params)
     # taskのboard_idを下記で指定
-    @board = Board.find(params[:board_id])
+    @board = current_user.boards.find(params[:board_id])
     @task.board_id = @board.id
     if @task.save
       redirect_to board_tasks_path, notice: '保存出来ました！'
@@ -29,8 +30,23 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @task = current_user.tasks.find(params[:id])
+    @board = current_user.boards.find(params[:board_id])
+    @task.board_id = @board.id
+  end
 
+  def update
+    @task = current_user.tasks.find(params[:id])
+    @board = current_user.boards.find(params[:board_id])
+    @task.board_id = @board.id
+    if @task.update(task_params)
+      redirect_to board_tasks_path, notice: '更新出来ました！'
+    else
+      flash.now[:error] = '更新に失敗しました！'
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
   def destroy; end
 
