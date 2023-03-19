@@ -3,13 +3,13 @@
     = @board.name
   .post
     - @tasks.each do |task|
-      -# = link_to(task_path(task_id: task.id)) do
-      .post__item
-        %h3.post__titile
-          = task.name
-        %p.post__text
-          = task.description
-        = image_tag 'avatar-2', alt: 'tasksの投稿者画像', class: 'post__image'
+      = link_to(board_task_path(id: task.id)) do
+        .post__item
+          %h3.post__titile
+            = task.name
+          %p.post__text
+            = task.description
+          = image_tag 'avatar-2', alt: 'tasksの投稿者画像', class: 'post__image'
   -# -if user_signed_in?
   -#   .post
   -#     = link_to('+ Add new borad', new_task_path, class: 'post__new-link')

@@ -1,0 +1,13 @@
+.container
+  %h2
+    = @task.name
+  .post
+    .post__item
+      %p.post__text.post__text--first
+        = @task.description
+      .dropdown.post__dropdown
+        %button.three-dot-leader
+          %span.dot
+            .dropdown-content
+              = link_to 'Edit', edit_board_task_path(id: @task.id)
+              = link_to 'Delete', board_task_path(id: @task.id), data: { turbo_method: "delete", turbo_confirm: '本当に削除しても宜しいですか？' }
