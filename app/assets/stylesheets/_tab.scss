@@ -44,8 +44,8 @@
   display: block;
   position: relative;
   /* ボタン要素のサイズ */
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
 }
 
 .three-dot-leader .dot,
@@ -75,11 +75,11 @@
 }
 
 .three-dot-leader .dot::before {
-  /* 上側ドットの位置 */
+  /* 左側ドットの位置 */
   right: -12px;
 }
 
 .three-dot-leader .dot::after {
-  /* 下側ドットの位置 */
+  /* 右ｇ側ドットの位置 */
   right: 12px;
 }
