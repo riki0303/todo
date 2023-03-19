@@ -10,6 +10,6 @@
           %p.post__text
             = task.description
           = image_tag 'avatar-2', alt: 'tasksの投稿者画像', class: 'post__image'
-  -# -if user_signed_in?
-  -#   .post
-  -#     = link_to('+ Add new borad', new_task_path, class: 'post__new-link')
+  -if user_signed_in?
+    .post
+      = link_to('+ Add new card', new_board_task_path, class: 'post__new-link')
