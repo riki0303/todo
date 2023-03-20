@@ -30,10 +30,9 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit
-    @task = current_user.tasks.find(params[:id])
-    @board = current_user.boards.find(params[:board_id])
-    @task.board_id = @board.id
+  def edit;
+    @task = Task.find(params[:id])
+    @board = Board.find(params[:board_id])
   end
 
   def update
@@ -48,7 +47,13 @@ class TasksController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    task = current_user.tasks.find(params[:id])
+    board = current_user.boards.find(params[:board_id])
+    task.board_id = board.id
+    task.destroy!
+    redirect_to board_tasks_path, notice: '削除出来ました！'
+  end
 
   # create,editでの変更内容を制御
   private
