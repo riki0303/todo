@@ -1,14 +1,18 @@
 .container
-  %h2
-    = @task.name
   .post
-    .post__item
-      %p.post__text.post__text--first
-        = @task.description
+    .post__head
+      %h2
+        = @task.name
       -if user_signed_in? && current_user.tasks.exists?(id: @task)
-        .dropdown.post__dropdown
+        .dropdown.post__dropdown.post__dropdown--title
           %button.three-dot-leader
             %span.dot
               .dropdown-content
                 = link_to 'Edit', edit_board_task_path(id: @task.id)
                 = link_to 'Delete', board_task_path(id: @task.id), data: { turbo_method: "delete", turbo_confirm: '本当に削除しても宜しいですか？' }
+    - if @task.eyecatch.present?
+      .post__img-box
+        = image_tag @task.eyecatch, class: 'post__img'
+    .post__item
+      %p.post__text.post__text--first
+        = @task.description

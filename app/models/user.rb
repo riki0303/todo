@@ -28,5 +28,4 @@ class User < ApplicationRecord
   def has_written?(board)
     boards.exists?(id: board.id)
   end
-
 end
