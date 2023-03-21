@@ -20,8 +20,8 @@ class TasksController < ApplicationController
     # user_idをログインユーザーのidとしたtaskインスタンスを生成
     @task = current_user.tasks.build(task_params)
     # taskのboard_idを下記で指定
-    @board = current_user.boards.find(params[:board_id])
-    @task.board_id = @board.id
+    # @board = current_user.boards.find(params[:board_id])
+    # @task.board_id = @board.id
     if @task.save
       redirect_to board_tasks_path, notice: '保存出来ました！'
     else
@@ -30,15 +30,15 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit;
+  def edit
     @task = Task.find(params[:id])
     @board = Board.find(params[:board_id])
   end
 
   def update
     @task = current_user.tasks.find(params[:id])
-    @board = current_user.boards.find(params[:board_id])
-    @task.board_id = @board.id
+    # @board = current_user.boards.find(params[:board_id])
+    # @task.board_id = @board.id
     if @task.update(task_params)
       redirect_to board_tasks_path, notice: '更新出来ました！'
     else
@@ -48,10 +48,10 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    task = current_user.tasks.find(params[:id])
-    board = current_user.boards.find(params[:board_id])
-    task.board_id = board.id
-    task.destroy!
+    @task = current_user.tasks.find(params[:id])
+    board = Board.find(params[:board_id])
+    @task.board_id = board.id
+    @task.destroy!
     redirect_to board_tasks_path, notice: '削除出来ました！'
   end
 
@@ -59,6 +59,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :description)
+    params.require(:task).permit(:name, :description, :eyecatch).merge(board_id: params[:board_id])
   end
 end

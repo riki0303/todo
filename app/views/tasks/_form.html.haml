@@ -5,6 +5,10 @@
 -# フォーム
 = form_with model: [board,task], local: true do |f|
   .field.form__item
+    = f.label :eyecatch, 'Eyecatch'
+    %br
+    = f.file_field :eyecatch, class: 'form__eyecatch'
+  .field.form__item
     = f.label :name, 'Name',class: 'form__title'
     %br
     = f.text_field :name, class: 'form__text'

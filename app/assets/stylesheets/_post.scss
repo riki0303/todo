@@ -1,14 +1,29 @@
 @import "variable";
 
 .post {
-  margin-top: 35px;
+  margin-top: 30px;
+}
+.post__head {
+  position: relative;
+}
+
+.post__img-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.post__img {
+  width: 100%;
+  border-radius: 10px;
 }
 
 .post__item {
   position: relative;
   background-color: $bacic-textfield-color;
   border-radius: 10px;
-  padding: 30px 6% 20px 4%;
+  padding: 30px 10% 20px 4%;
   margin-top: 25px;
 }
 
@@ -35,8 +50,14 @@
 
 .post__dropdown {
   position: absolute;
-  top: 20px;
-  right: 15px;
+  top: 15px;
+  right: 20px;
+}
+
+.post__dropdown--title {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
 }
 
 .post__new-link {
