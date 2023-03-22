@@ -16,3 +16,11 @@
     .post__item
       %p.post__text.post__text--first
         = @task.description
+  .post
+    %h2 Comment
+    -@comments.each do |comment|
+      %p.post__text
+        = comment.description
+  -if user_signed_in?
+    .post
+      = link_to('+ Add new comment', new_board_task_comment_path(task_id: @task.id), class: 'post__new-link')
