@@ -12,4 +12,5 @@ Rails.application.routes.draw do
       resources :comments, only: %i[new create destroy]
     end
   end
+
 end
