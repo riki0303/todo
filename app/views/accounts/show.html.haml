@@ -1,0 +1,17 @@
+.container
+  - if @user == current_user
+    %p 自分が書いたBoard
+  - else
+    %h2 user-id
+    = @user.id
+    %br
+    %h2 user-email
+    = @user.email
+    %p が書いたBoard
+    - if current_user&.has_followed?(@user)
+      = link_to 'Unfollow', account_unfollows_path(@user), data: { "turbo-method": :post }, class: 'post__new-link'
+    - else
+      = link_to 'Follow', account_follows_path(@user), data: { "turbo-method": :post }, class: 'post__new-link'
+
+
+
