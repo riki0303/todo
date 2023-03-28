@@ -8,7 +8,8 @@
             = board.name
           %p.post__text
             = board.description
-          = image_tag 'avatar-2', alt: 'boardsの投稿者画像', class: 'post__image'
+          = link_to account_path(board.user) do
+            = image_tag 'avatar-2', alt: 'boardsの投稿者画像', class: 'post__image'
           %p.post__text
             = board.display_created_at
           -if user_signed_in? && current_user. has_written?(board)
