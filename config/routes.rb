@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   root to: 'boards#index'
 
+  resource :timeline, only: [:show]
+
   resources :boards do
     resources :tasks do
       resources :comments, only: %i[new create destroy]

@@ -1,0 +1,19 @@
+.post
+  - boards.each do |board|
+    = link_to(board_tasks_path(board_id: board.id)) do
+      .post__item
+        %h3.post__titile
+          = board.name
+        %p.post__text
+          = board.description
+        = link_to account_path(board.user) do
+          = image_tag 'avatar-2', alt: 'boardsの投稿者画像', class: 'post__image'
+        %p.post__text
+          = board.display_created_at
+        -if user_signed_in? && current_user. has_written?(board)
+          .dropdown.post__dropdown
+            %button.three-dot-leader
+              %span.dot
+                .dropdown-content
+                  = link_to 'Edit', edit_board_path(id: board.id)
+                  = link_to 'Delete', board_path(id: board.id), data: { turbo_method: "delete", turbo_confirm: '本当に削除しても宜しいですか？' }

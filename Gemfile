@@ -29,7 +29,6 @@ gem 'jbuilder'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
-gem 'annotate'
 gem 'devise'
 gem 'hamlit'
 
@@ -53,6 +52,8 @@ gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   # See https://guides.rubyonxxrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'active_decorator'
+  gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
