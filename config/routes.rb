@@ -12,16 +12,21 @@ Rails.application.routes.draw do
 
   root to: 'boards#index'
 
-  resource :timeline, only: [:show]
-
+  
   resources :boards do
     resources :tasks do
       resources :comments, only: %i[new create destroy]
     end
   end
 
-  resources :accounts, only: [:show] do
-    resources :follows, only: [:create]
-    resources :unfollows, only: [:create]
+  
+
+  scope module: :apps do
+    resources :accounts, only: [:show] do
+      resources :follows, only: [:create]
+      resources :unfollows, only: [:create]
+    end
+    resource :timeline, only: [:show]
   end
+
 end
