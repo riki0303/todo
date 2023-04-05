@@ -40,6 +40,7 @@ gem 'hamlit'
 gem 'active_decorator'
 gem 'annotate'
 gem 'better_errors'
+gem 'foreman'
 gem 'sidekiq'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

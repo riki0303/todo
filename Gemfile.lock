@@ -115,6 +115,7 @@ GEM
     erubi (1.12.0)
     erubis (2.7.0)
     ffi (1.15.5)
+    foreman (0.87.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     haml (6.1.1)
@@ -327,6 +328,7 @@ DEPENDENCIES
   debug
   devise
   erb2haml
+  foreman
   hamlit
   image_processing (~> 1.2)
   importmap-rails
