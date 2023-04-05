@@ -1,3 +1,0 @@
-class RelationshipMailer < ApplicationMailer
-  
-end

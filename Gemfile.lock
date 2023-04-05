@@ -97,6 +97,7 @@ GEM
       xpath (~> 3.2)
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
+    connection_pool (2.4.0)
     crass (1.0.6)
     date (3.3.3)
     debug (1.7.1)
@@ -114,6 +115,7 @@ GEM
     erubi (1.12.0)
     erubis (2.7.0)
     ffi (1.15.5)
+    foreman (0.87.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     haml (6.1.1)
@@ -225,6 +227,8 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    redis-client (0.14.1)
+      connection_pool
     regexp_parser (2.7.0)
     reline (0.3.2)
       io-console (~> 0.5)
@@ -267,6 +271,11 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     sexp_processor (4.16.1)
+    sidekiq (7.0.7)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      rack (>= 2.2.4)
+      redis-client (>= 0.11.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -319,6 +328,7 @@ DEPENDENCIES
   debug
   devise
   erb2haml
+  foreman
   hamlit
   image_processing (~> 1.2)
   importmap-rails
@@ -332,6 +342,7 @@ DEPENDENCIES
   rubocop-rails
   sassc-rails
   selenium-webdriver
+  sidekiq
   sprockets-rails
   stimulus-rails
   turbo-rails
