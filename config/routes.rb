@@ -12,14 +12,11 @@ Rails.application.routes.draw do
 
   root to: 'boards#index'
 
-  
   resources :boards do
     resources :tasks do
       resources :comments, only: %i[new create destroy]
     end
   end
-
-  
 
   scope module: :apps do
     resources :accounts, only: [:show] do
@@ -28,5 +25,4 @@ Rails.application.routes.draw do
     end
     resource :timeline, only: [:show]
   end
-
 end
