@@ -3,7 +3,7 @@
   - task.errors.full_messages.each do |message|
     %li= message
 -# フォーム
-= form_with model: [board,task], local: true do |f|
+= form_with model:[board, task], local: true do |f|
   .field.form__item
     = f.label :eyecatch, 'Eyecatch'
     %br

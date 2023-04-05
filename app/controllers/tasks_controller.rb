@@ -20,6 +20,7 @@ class TasksController < ApplicationController
   def create
     # user_idをログインユーザーのidとしたtaskインスタンスを生成
     @task = current_user.tasks.build(task_params)
+    @board = Board.find(params[:board_id])
     # taskのboard_idを下記で指定
     # @board = current_user.boards.find(params[:board_id])
     # @task.board_id = @board.id

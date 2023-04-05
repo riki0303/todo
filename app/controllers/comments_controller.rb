@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
     @task = Task.find(params[:task_id])
+    @board = Board.find(params[:board_id])
     if @comment.save
       redirect_to board_task_path(id: @task.id), notice: '保存出来ました！'
     else
