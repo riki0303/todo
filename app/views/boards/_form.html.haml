@@ -1,9 +1,9 @@
 -# エラーメッセージ
 %ul
-  - @board.errors.full_messages.each do |message|
+  - board.errors.full_messages.each do |message|
     %li= message
 -# フォーム
-= form_with model: @board, local: true do |f|
+= form_with model: board, local: true do |f|
   .field.form__item
     = f.label :name, 'Name',class: 'form__title'
     %br
