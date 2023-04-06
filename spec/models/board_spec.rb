@@ -1,12 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Board, type: :model do
-  let!(:user) do
-    user = User.create!({
-      email: 'test@example.com',
-      password: 'password'
-    })
-  end
+  let!(:user) { create(:user) }
+
   context '名前と概要が入力されている場合' do
     let!(:board) do
       user.boards.build({
