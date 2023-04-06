@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :board do
-    name {Faker::JapaneseMedia::Naruto}
-    description {Faker::JapaneseMedia::OnePiece}
+    name { Faker::Book.title }
+    description { Faker::Book.author }
   end
 end

@@ -4,7 +4,7 @@ RSpec.describe Board, type: :model do
   let!(:user) { create(:user) }
 
   context '名前と概要が入力されている場合' do
-    let!(:board) {build(:board, user: user)}
+    let!(:board) { build(:board, user:) }
 
     it '名前と内容が入力されていれば、boardを保存できる' do
       expect(board).to be_valid
@@ -12,7 +12,7 @@ RSpec.describe Board, type: :model do
   end
 
   context '名前が入力されていない場合' do
-    let!(:board) {build(:board, name: '', user: user)}
+    let!(:board) { build(:board, name: '', user:) }
 
     before do
       board.save
