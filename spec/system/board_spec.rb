@@ -6,7 +6,7 @@ RSpec.describe 'Board', type: :system do
   it 'ボード一覧が表示される' do
     visit root_path
     boards.each do |board|
-      expect(page).to have_content(board.name)
+      expect(page).to have_css('.post__title', text:board.name)
     end
   end
 end
