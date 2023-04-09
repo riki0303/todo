@@ -2,7 +2,7 @@
   - boards.each do |board|
     = link_to(board_tasks_path(board_id: board.id)) do
       .post__item
-        %h3.post__titile
+        %h3.post__title
           = board.name
         %p.post__text
           = board.description
